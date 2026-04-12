@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "torzoid"
+version = "0.1.0"
+description = "Temporal tiny-pointer object store prototype for trading RAM for CPU time"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "Custom Non-Commercial Source Available License"}
+authors = [
+  {name = "Alexis Eleanor Fagan"}
+]
+keywords = ["memory", "ram", "checkpointing", "compression", "object-store", "tiny-pointers"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "License :: Other/Proprietary License",
+  "Operating System :: OS Independent",
+  "Topic :: System :: Systems Administration",
+  "Topic :: Software Development :: Libraries :: Python Modules"
+]
+
+[project.scripts]
+torzoid = "torzoid.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
